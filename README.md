@@ -1,2 +1,2 @@
-# Davenport2025_JPO
-Code for TPOSE data analysis supporting Davenport et al. 2025
+# JPO2025
+Code supporting analysis of the Tropical Pacific Ocean State Estimate (TPOSE) in Davenport et al. 2025, 'Mechanisms of Zonal Momentum Transport at 0N, 140W in an Ocean State Estimate'.
