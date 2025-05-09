@@ -19,7 +19,7 @@ def tpose2012to2016(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jan2012/diags/'
 
-    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
 
     folder_months = ['mar2012/diags/','may2012/diags/','jul2012/diags/','sep2012/diags_iter7_daily/']
     folder_days = np.array([61,61,62,112])
@@ -30,7 +30,7 @@ def tpose2012to2016(prefix):
         num_diags = folder_days[i] + offset
         intervals = range(offset*itPerFile[i],itPerFile[i]*num_diags,itPerFile[i])
         data_dir = data_parent_dir + month
-        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
         tpose_ds = xr.concat([tpose_ds,new],'time')
         i += 1
 
@@ -42,7 +42,7 @@ def tpose2012to2016(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jan2013/diags_daily/'
 
-    new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
     tpose_ds = xr.concat([tpose_ds,new],'time')
 
     #
@@ -56,7 +56,7 @@ def tpose2012to2016(prefix):
         num_diags = folder_days[i] + offset
         intervals = range(offset*itPerFile[i],itPerFile[i]*num_diags,itPerFile[i])
         data_dir = data_parent_dir + month
-        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
         tpose_ds = xr.concat([tpose_ds,new],'time')
         i += 1
 
@@ -66,7 +66,7 @@ def tpose2012to2016(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jan2014/diags_daily/'
 
-    new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
     tpose_ds = xr.concat([tpose_ds,new],'time')
 
     folder_months = ['mar2014/diags_daily/','may2014/diags_daily/','jul2014/diags_daily/','sep2014/diags_daily/','nov2014/diags_daily',
@@ -84,7 +84,7 @@ def tpose2012to2016(prefix):
         num_diags = folder_days[i] + offset
         intervals = range(offset*itPerFile[i],itPerFile[i]*num_diags,itPerFile[i])
         data_dir = data_parent_dir + month
-        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
         tpose_ds = xr.concat([tpose_ds,new],'time')
         i += 1
 
@@ -104,7 +104,7 @@ def tpose2012to2016_kpp(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'mar2012/diags/'
 
-    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
 
     folder_months = ['may2012/diags/','jul2012/diags/','sep2012/diags_iter7_daily/',]
     folder_days = np.array([61,62,112])
@@ -115,7 +115,7 @@ def tpose2012to2016_kpp(prefix):
         num_diags = folder_days[i] + offset
         intervals = range(offset*itPerFile[i],itPerFile[i]*num_diags,itPerFile[i])
         data_dir = data_parent_dir + month
-        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
         tpose_ds = xr.concat([tpose_ds,new],'time')
         i += 1
 
@@ -127,7 +127,7 @@ def tpose2012to2016_kpp(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jan2013/diags_daily/'
 
-    new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
     tpose_ds = xr.concat([tpose_ds,new],'time')
 
     # nov 2013 doesn't exist yet, once it does then all months will be treated the same pretty much
@@ -141,7 +141,7 @@ def tpose2012to2016_kpp(prefix):
         num_diags = folder_days[i] + offset
         intervals = range(offset*itPerFile[i],itPerFile[i]*num_diags,itPerFile[i])
         data_dir = data_parent_dir + month
-        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
         tpose_ds = xr.concat([tpose_ds,new],'time')
         i += 1
 
@@ -151,7 +151,7 @@ def tpose2012to2016_kpp(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jan2014/diags_daily/'
 
-    new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
     tpose_ds = xr.concat([tpose_ds,new],'time')
 
     folder_months = ['mar2014/diags_daily/','may2014/diags_daily/','jul2014/diags_daily/','sep2014/diags_daily/','nov2014/diags_daily',
@@ -169,7 +169,7 @@ def tpose2012to2016_kpp(prefix):
         num_diags = folder_days[i] + offset
         intervals = range(offset*itPerFile[i],itPerFile[i]*num_diags,itPerFile[i])
         data_dir = data_parent_dir + month
-        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
         tpose_ds = xr.concat([tpose_ds,new],'time')
         i += 1
 
@@ -191,7 +191,7 @@ def tpose2012to2013(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jan2012/diags/'
 
-    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
 
     folder_months = ['mar2012/diags/','may2012/diags/','jul2012/diags/','sep2012/diags_iter7_daily/',]
     folder_days = np.array([61,61,62,112])
@@ -202,7 +202,7 @@ def tpose2012to2013(prefix):
         num_diags = folder_days[i] + offset
         intervals = range(offset*itPerFile[i],itPerFile[i]*num_diags,itPerFile[i])
         data_dir = data_parent_dir + month
-        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
         tpose_ds = xr.concat([tpose_ds,new],'time')
         i += 1
 
@@ -214,7 +214,7 @@ def tpose2012to2013(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jan2013/diags_daily/'
 
-    new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
     tpose_ds = xr.concat([tpose_ds,new],'time')
 
     folder_months = ['mar2013/diags_daily/','may2013/diags_daily/','jul2013/diags_daily/','sep2013/diags_daily/','nov2013/diags_daily/']
@@ -227,7 +227,7 @@ def tpose2012to2013(prefix):
         num_diags = folder_days[i] + offset
         intervals = range(offset*itPerFile[i],itPerFile[i]*num_diags,itPerFile[i])
         data_dir = data_parent_dir + month
-        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
         tpose_ds = xr.concat([tpose_ds,new],'time')
         i += 1
 
@@ -250,7 +250,7 @@ def tpose2012(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jan2012/diags/'
 
-    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':125,'XC':125,'YG':25,'YC':25,'Zl':1,'Z':1})
+    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':125,'XC':125,'YG':25,'YC':25,'Zl':1,'Z':1})
 
     folder_months = ['mar2012/diags/','may2012/diags/','jul2012/diags/','sep2012/diags_iter7_daily/']
     folder_days = np.array([61,61,62,112])
@@ -261,7 +261,7 @@ def tpose2012(prefix):
         num_diags = folder_days[i] + offset
         intervals = range(offset*itPerFile[i],itPerFile[i]*num_diags,itPerFile[i])
         data_dir = data_parent_dir + month
-        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':125,'XC':125,'YG':25,'YC':25,'Zl':1,'Z':1})
+        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':125,'XC':125,'YG':25,'YC':25,'Zl':1,'Z':1})
         tpose_ds = xr.concat([tpose_ds,new],'time')
         i += 1
 
@@ -284,7 +284,7 @@ def tpose2012_iter0(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jan2012/diags_iter0/'
 
-    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
 
     folder_months = ['mar2012/diags_iter0/','may2012/diags_iter0/','jul2012/diags_iter0/','sep2012/diags_iter0/','nov2012/diags_iter0/']
     folder_days = np.array([61,61,62,61,51])
@@ -295,7 +295,7 @@ def tpose2012_iter0(prefix):
         num_diags = folder_days[i] + offset
         intervals = range(offset*itPerFile[i],itPerFile[i]*num_diags,itPerFile[i])
         data_dir = data_parent_dir + month
-        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+        new = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
         tpose_ds = xr.concat([tpose_ds,new],'time')
         i += 1
 
@@ -315,7 +315,7 @@ def tposeOct2012_hourly(prefix):
     intervals = range(startDay,endDay+itPerFile,itPerFile)
     data_dir = data_parent_dir + 'sep2012/diags_iter7_hourly/'
 
-    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    tpose_ds = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
 
     return tpose_ds
 
@@ -331,35 +331,35 @@ def tpose2012_4month(prefix):
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jan2012/diags/'
 
-    dsJan = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    dsJan = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
 
     num_diags = 122  #
     itPerFile = 72 # 1 day
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'mar2012/diags/'
 
-    dsMar = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    dsMar = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
 
     num_diags = 123  #
     itPerFile = 72 # 1 day
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'may2012/diags/'
 
-    dsMay = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    dsMay = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
 
     num_diags = 123  #
     itPerFile = 72 # 1 day
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'jul2012/diags/'
 
-    dsJul = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    dsJul = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
 
     num_diags = 121  #
     itPerFile = 48 # 1 day
     intervals = range(itPerFile,itPerFile*(num_diags+1),itPerFile)
     data_dir = data_parent_dir + 'sep2012/diags_iter7_daily/'
 
-    dsSep = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':25,'XG':250,'XC':250,'YG':50,'YC':50,'Zl':1,'Z':1})
+    dsSep = open_mdsdataset(data_dir=data_dir,grid_dir=grid_dir,iters=intervals,prefix=prefix).chunk({'time':250,'XG':250,'XC':250,'YG':100,'YC':100,'Zl':1,'Z':1})
 
 
     return dsJan, dsMar, dsMay, dsJul, dsSep
