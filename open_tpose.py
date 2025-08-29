@@ -1,5 +1,6 @@
-# This script includes functions to open tpose output directly from the MITgcm (not from netcdf)
-# The output from the MITgcm is in a binary format, the number of iterations/model timestep varies between the runs, as does the location of the output
+# This script includes functions to open tpose output directly from the MITgcm (not from netcdf) and load the data into Xarray structures.
+# The output from the MITgcm is in a binary format (.data files, also known as mds data)
+# The number of iterations/model timestep varies between the runs
 import xarray as xr
 from xmitgcm import open_mdsdataset
 import numpy as np
