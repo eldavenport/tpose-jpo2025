@@ -1,2 +1,3 @@
-# ZonalMomentum_TPOSE6
-Code supporting analysis of the Tropical Pacific Ocean State Estimate (TPOSE) in Davenport et al. 2025, 'Mechanisms of Zonal Momentum Transport at 0N, 140W in an Ocean State Estimate'.
+# tpose-jpo2925
+
+This project contains code to generate the figures in Davenport et al. 2025, 'Mechanisms of Zonal Momentum Transport at 0N, 140W in an Ocean State Estimate' (in review at JPO). Output from the Tropical Pacific Ocean State Estimate is available at [this link](https://ecco.ucsd.edu/tpose.html).
